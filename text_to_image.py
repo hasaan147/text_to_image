@@ -8,7 +8,7 @@ from PIL import Image
 def load_model():
     model_id = "CompVis/stable-diffusion-v1-4"
     pipe = StableDiffusionPipeline.from_pretrained(model_id)
-    pipe = pipe.to("cuda")  # Use "cpu" if you don't have GPU
+    pipe = pipe.to("cpu")  # Force CPU usage
     return pipe
 
 pipe = load_model()
